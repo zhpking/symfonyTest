@@ -1,0 +1,46 @@
+AppBundle\Entity\BlogComment:
+    type: entity
+    repositoryClass: AppBundle\Repository\BlogCommentRepository
+    table: blog_comment
+    indexes:
+        blog_comment_post_id_idx:
+            columns:
+                - post_id
+    id:
+        id:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        author:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        content:
+            type: text
+            nullable: false
+            length: null
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+    manyToOne:
+        post:
+            targetEntity: BlogPost
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: comments
+            joinColumns:
+                name: post_id
+                referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

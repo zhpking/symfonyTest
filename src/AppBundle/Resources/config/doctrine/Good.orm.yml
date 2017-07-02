@@ -1,0 +1,22 @@
+AppBundle\Entity\Good:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\GoodRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: good
+            joinColumn:
+                name: category_id
+                referencedColumnName: id

@@ -1,0 +1,35 @@
+AppBundle\Entity\product:
+    type: entity
+    repositoryClass: AppBundle\Repository\productRepository
+    table: product
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        proName:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: pro_name
+        proIntroduce:
+            type: text
+            nullable: false
+            length: null
+            options:
+                fixed: false
+            column: pro_introduce
+        proTime:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: pro_time
+    lifecycleCallbacks: {  }

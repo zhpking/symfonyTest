@@ -1,0 +1,89 @@
+_wdt:
+    resource: '@WebProfilerBundle/Resources/config/routing/wdt.xml'
+    prefix: /_wdt
+
+_profiler:
+    resource: '@WebProfilerBundle/Resources/config/routing/profiler.xml'
+    prefix: /_profiler
+
+_errors:
+    resource: '@TwigBundle/Resources/config/routing/errors.xml'
+    prefix: /_error
+
+_main:
+    resource: routing.yml
+
+_test:
+    path: /test/{page}
+    defaults: {_controller:AppBundle:Test:index,page:1}
+
+_test_show:
+    path: /test/{sl}/{sl2}
+    defaults: {_controller:AppBundle:Test:show,sl:1,sl2:2}
+
+_test_getInfo:
+    path: /getInfo/{sl}/{sl2}
+    defaults: {_controller:AppBundle:Test:getInfo,sl:1,sl2:2}
+
+_posts_index:
+    path: /posts/index
+    defaults: {_controller:AppBundle:Posts:index}
+
+_posts_add:
+    path: /posts/add
+    defaults: {_controller:AppBundle:Posts:add}
+    methods: [POST]
+
+_posts_edit:
+    path: /posts/edit/{id}
+    defaults: {_controller:AppBundle:Posts:edit}
+    methods: [POST]
+
+_posts_del:
+    path: /posts/del
+    defaults: {_controller:AppBundle:Posts:del}
+    methods: [POST]
+
+_posts_detail:
+    path: /posts/detail/{id}
+    defaults: {_controller:AppBundle:Posts:detail}
+    methods: [GET]
+
+_posts_dal:
+    path: /posts/dal
+    defaults: {_controller:AppBundle:Posts:dal}
+    methods: [POST]
+
+_posts_repos:
+    path: /posts/repos
+    defaults: {_controller:AppBundle:Posts:repos}
+    methods: [POST]
+
+_posts_assAdd:
+    path: /posts/assAdd
+    defaults: {_controller:AppBundle:Posts:assadd}
+    methods: [POST]
+
+_ass_index:
+    path: /ass/index
+    defaults: {_controller:AppBundle:Ass:index}
+    
+
+_ass_add:
+    path: /ass/add
+    defaults: {_controller:AppBundle:Ass:add}
+    methods: [POST]
+
+_ass_edit:
+    path: /ass/edit
+    defaults: {_controller:AppBundle:Ass:edit}
+    methods: [POST]
+
+_ass_del:
+    path: /ass/del
+    defaults: {_controller:AppBundle:Ass:del}
+    methods: [POST]
+
+_ass_join:
+    path: /ass/join
+    defaults: {_controller:AppBundle:Ass:join}
